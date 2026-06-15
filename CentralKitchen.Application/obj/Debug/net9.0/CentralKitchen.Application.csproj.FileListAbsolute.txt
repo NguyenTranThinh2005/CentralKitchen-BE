@@ -1,0 +1,17 @@
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Application.deps.json
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Application.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Application.pdb
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Domain.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Domain.pdb
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.csproj.AssemblyReference.cache
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.AssemblyInfoInputs.cache
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.AssemblyInfo.cs
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.csproj.CoreCompileInputs.cache
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralK.EFD6B09A.Up2Date
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\refint\CentralKitchen.Application.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.pdb
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\ref\CentralKitchen.Application.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Application.xml
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.xml

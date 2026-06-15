@@ -1,0 +1,125 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CentralKitchen.API</name>
+    </assembly>
+    <members>
+        <member name="T:CentralKitchen.API.Controllers.AuthController">
+            <summary>
+            Authentication operations.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.AuthController.Login(CentralKitchen.Application.DTOs.Auth.LoginRequest)">
+            <summary>
+            Authenticates a user using email and password against Supabase Auth, returning access token and database profile details.
+            </summary>
+            <param name="request">Email and Password payload.</param>
+            <returns>Login response envelope with JWT AccessToken.</returns>
+        </member>
+        <member name="T:CentralKitchen.API.Controllers.DashboardController">
+            <summary>
+            Managers reporting statistics.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.DashboardController.GetSummary">
+            <summary>
+            Gets today's sales order count summary and low-stock warning indicators. Restricted to Managers.
+            </summary>
+        </member>
+        <member name="T:CentralKitchen.API.Controllers.InventoryController">
+            <summary>
+            Kitchen inventory stock tracking.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.InventoryController.GetInventory">
+            <summary>
+            Gets all products stock levels. Accessible by Managers and Kitchen Staff.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.InventoryController.UpdateInventory(System.Int32,CentralKitchen.Application.DTOs.Inventory.UpdateInventoryDto)">
+            <summary>
+            Updates product stock levels manually. Restricted to Managers. Registers inventory log.
+            </summary>
+        </member>
+        <member name="T:CentralKitchen.API.Controllers.OrdersController">
+            <summary>
+            Orders placement and fulfillment status transitions.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.CreateOrder(CentralKitchen.Application.DTOs.Orders.CreateOrderDto)">
+            <summary>
+            Submits a new franchise order. Restricted to Store Staff. Status automatically set to "created".
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.GetOrders(System.Nullable{CentralKitchen.Domain.Enums.OrderStatus},System.Nullable{System.DateTime})">
+            <summary>
+            Gets orders list filtered by status and creation date. Store Staff see only their own store orders, Kitchen Staff and Managers see all.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.GetOrderById(System.Int32)">
+            <summary>
+            Gets detailed information for a single order, including order items and status history logs.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.UpdateOrderStatus(System.Int32,CentralKitchen.Application.DTOs.Orders.UpdateOrderStatusDto)">
+            <summary>
+            Patches order fulfillment status state transition. Enforces strict transitions rules:
+            - created -> accepted (Kitchen Staff only)
+            - accepted -> processing (Kitchen Staff only)
+            - processing -> shipping (Kitchen Staff only) -> Triggers stock reduction in inventory and registers log.
+            - shipping -> received (Store Staff of that store only)
+            - created/accepted/processing -> cancelled (Manager or Kitchen Staff only, cancelReason required)
+            </summary>
+        </member>
+        <member name="T:CentralKitchen.API.Controllers.ProductsController">
+            <summary>
+            Product management endpoints.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.GetProducts(System.Nullable{CentralKitchen.Domain.Enums.ProductCategory},System.Nullable{System.Boolean})">
+            <summary>
+            Gets lists of products with optional category and status filtering.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.GetProductById(System.Int32)">
+            <summary>
+            Gets a specific product details.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.CreateProduct(CentralKitchen.Application.DTOs.Products.CreateProductDto)">
+            <summary>
+            Creates a new product. Automatically initializes the stock quantity to 0 in inventory.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.UpdateProduct(System.Int32,CentralKitchen.Application.DTOs.Products.UpdateProductDto)">
+            <summary>
+            Updates product information.
+            </summary>
+        </member>
+        <member name="T:CentralKitchen.API.Controllers.StoresController">
+            <summary>
+            Store location management endpoints.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.StoresController.GetStores">
+            <summary>
+            Gets all stores in the franchise.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.StoresController.GetStoreById(System.Int32)">
+            <summary>
+            Gets a store details by identifier.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.StoresController.CreateStore(CentralKitchen.Application.DTOs.Stores.CreateStoreDto)">
+            <summary>
+            Registers a new franchise store.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.StoresController.UpdateStore(System.Int32,CentralKitchen.Application.DTOs.Stores.UpdateStoreDto)">
+            <summary>
+            Updates franchise store profile properties.
+            </summary>
+        </member>
+    </members>
+</doc>

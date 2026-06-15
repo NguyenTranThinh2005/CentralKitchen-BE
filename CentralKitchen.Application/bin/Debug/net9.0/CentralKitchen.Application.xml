@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CentralKitchen.Application</name>
+    </assembly>
+    <members>
+        <member name="P:CentralKitchen.Application.DTOs.Auth.LoginRequest.Email">
+            <summary>
+            User email address.
+            </summary>
+            <example>staff@store.com</example>
+        </member>
+        <member name="P:CentralKitchen.Application.DTOs.Auth.LoginRequest.Password">
+            <summary>
+            User password.
+            </summary>
+            <example>PRM393_Group3</example>
+        </member>
+    </members>
+</doc>

@@ -1,0 +1,11 @@
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\bin\Debug\net9.0\CentralKitchen.Domain.deps.json
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\bin\Debug\net9.0\CentralKitchen.Domain.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\bin\Debug\net9.0\CentralKitchen.Domain.pdb
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.GeneratedMSBuildEditorConfig.editorconfig
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.AssemblyInfoInputs.cache
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.AssemblyInfo.cs
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.csproj.CoreCompileInputs.cache
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\refint\CentralKitchen.Domain.dll
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\CentralKitchen.Domain.pdb
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Domain\obj\Debug\net9.0\ref\CentralKitchen.Domain.dll
