@@ -39,7 +39,7 @@ public class InventoryController : ApiControllerBase
     [Authorize(Policy = "RequireManager")]
     [ProducesResponseType(typeof(ApiResponse<InventoryDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> UpdateInventory(int productId, [FromBody] UpdateInventoryDto dto)
+    public async Task<IActionResult> UpdateInventory(Guid productId, [FromBody] UpdateInventoryDto dto)
     {
         var inventory = await _inventoryService.UpdateInventoryAsync(productId, CurrentUserId, dto);
         if (inventory == null)

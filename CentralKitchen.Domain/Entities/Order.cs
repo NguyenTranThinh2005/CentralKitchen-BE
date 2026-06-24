@@ -6,9 +6,9 @@ namespace CentralKitchen.Domain.Entities;
 
 public class Order
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string OrderCode { get; set; } = null!;
-    public int StoreId { get; set; }
+    public Guid StoreId { get; set; }
     public Guid CreatedBy { get; set; }
     public OrderStatus Status { get; set; }
     public string? Note { get; set; }

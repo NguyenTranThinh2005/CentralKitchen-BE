@@ -60,7 +60,7 @@ public class OrdersController : ApiControllerBase
     [Authorize]
     [ProducesResponseType(typeof(ApiResponse<OrderDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> GetOrderById(int id)
+    public async Task<IActionResult> GetOrderById(Guid id)
     {
         var order = await _orderService.GetOrderByIdAsync(id, CurrentUserRole, CurrentUserStoreId);
         if (order == null)
@@ -82,7 +82,7 @@ public class OrdersController : ApiControllerBase
     [Authorize]
     [ProducesResponseType(typeof(ApiResponse<object>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 400)]
-    public async Task<IActionResult> UpdateOrderStatus(int id, [FromBody] UpdateOrderStatusDto dto)
+    public async Task<IActionResult> UpdateOrderStatus(Guid id, [FromBody] UpdateOrderStatusDto dto)
     {
         var (success, errorMsg) = await _orderService.UpdateOrderStatusAsync(
             id,

@@ -39,7 +39,7 @@ public class StoresController : ApiControllerBase
     [Authorize]
     [ProducesResponseType(typeof(ApiResponse<StoreDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> GetStoreById(int id)
+    public async Task<IActionResult> GetStoreById(Guid id)
     {
         var store = await _storeService.GetStoreByIdAsync(id);
         if (store == null)
@@ -68,7 +68,7 @@ public class StoresController : ApiControllerBase
     [Authorize(Policy = "RequireManager")]
     [ProducesResponseType(typeof(ApiResponse<StoreDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> UpdateStore(int id, [FromBody] UpdateStoreDto dto)
+    public async Task<IActionResult> UpdateStore(Guid id, [FromBody] UpdateStoreDto dto)
     {
         var store = await _storeService.UpdateStoreAsync(id, dto);
         if (store == null)

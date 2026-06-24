@@ -4,8 +4,8 @@ namespace CentralKitchen.Application.DTOs.Inventory;
 
 public class InventoryDto
 {
-    public int Id { get; set; }
-    public int ProductId { get; set; }
+    public Guid Id { get; set; }
+    public Guid ProductId { get; set; }
     public string ProductName { get; set; } = null!;
     public string ProductUnit { get; set; } = null!;
     public string? ProductDescription { get; set; }

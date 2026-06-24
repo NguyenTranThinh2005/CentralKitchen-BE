@@ -4,8 +4,8 @@ namespace CentralKitchen.Domain.Entities;
 
 public class InventoryLog
 {
-    public int Id { get; set; }
-    public int ProductId { get; set; }
+    public Guid Id { get; set; }
+    public Guid ProductId { get; set; }
     public int ChangeQty { get; set; }
     public string Reason { get; set; } = null!;
     public string? ReferenceId { get; set; }

@@ -30,12 +30,12 @@ public abstract class ApiControllerBase : ControllerBase
         }
     }
 
-    protected int? CurrentUserStoreId
+    protected Guid? CurrentUserStoreId
     {
         get
         {
             var storeIdClaim = User.FindFirst("store_id");
-            if (storeIdClaim != null && int.TryParse(storeIdClaim.Value, out var storeId))
+            if (storeIdClaim != null && Guid.TryParse(storeIdClaim.Value, out var storeId))
             {
                 return storeId;
             }

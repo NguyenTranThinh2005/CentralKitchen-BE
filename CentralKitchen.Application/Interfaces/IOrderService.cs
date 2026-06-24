@@ -8,8 +8,8 @@ namespace CentralKitchen.Application.Interfaces;
 
 public interface IOrderService
 {
-    Task<OrderDto> CreateOrderAsync(Guid userId, int storeId, CreateOrderDto dto);
-    Task<List<OrderDto>> GetOrdersAsync(string userRole, int? userStoreId, OrderStatus? status = null, DateTime? date = null);
-    Task<OrderDto?> GetOrderByIdAsync(int id, string userRole, int? userStoreId);
-    Task<(bool Success, string? ErrorMessage)> UpdateOrderStatusAsync(int id, Guid userId, string userRole, int? userStoreId, UpdateOrderStatusDto dto);
+    Task<OrderDto> CreateOrderAsync(Guid userId, Guid storeId, CreateOrderDto dto);
+    Task<List<OrderDto>> GetOrdersAsync(string userRole, Guid? userStoreId, OrderStatus? status = null, DateTime? date = null);
+    Task<OrderDto?> GetOrderByIdAsync(Guid id, string userRole, Guid? userStoreId);
+    Task<(bool Success, string? ErrorMessage)> UpdateOrderStatusAsync(Guid id, Guid userId, string userRole, Guid? userStoreId, UpdateOrderStatusDto dto);
 }

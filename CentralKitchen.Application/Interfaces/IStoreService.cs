@@ -7,7 +7,7 @@ namespace CentralKitchen.Application.Interfaces;
 public interface IStoreService
 {
     Task<List<StoreDto>> GetStoresAsync();
-    Task<StoreDto?> GetStoreByIdAsync(int id);
+    Task<StoreDto?> GetStoreByIdAsync(Guid id);
     Task<StoreDto> CreateStoreAsync(CreateStoreDto dto);
-    Task<StoreDto?> UpdateStoreAsync(int id, UpdateStoreDto dto);
+    Task<StoreDto?> UpdateStoreAsync(Guid id, UpdateStoreDto dto);
 }

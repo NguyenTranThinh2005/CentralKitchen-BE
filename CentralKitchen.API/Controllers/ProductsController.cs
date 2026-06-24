@@ -40,7 +40,7 @@ public class ProductsController : ApiControllerBase
     [Authorize]
     [ProducesResponseType(typeof(ApiResponse<ProductDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> GetProductById(int id)
+    public async Task<IActionResult> GetProductById(Guid id)
     {
         var product = await _productService.GetProductByIdAsync(id);
         if (product == null)
@@ -69,7 +69,7 @@ public class ProductsController : ApiControllerBase
     [Authorize(Policy = "RequireManager")]
     [ProducesResponseType(typeof(ApiResponse<ProductDto>), 200)]
     [ProducesResponseType(typeof(ApiResponse<object>), 404)]
-    public async Task<IActionResult> UpdateProduct(int id, [FromBody] UpdateProductDto dto)
+    public async Task<IActionResult> UpdateProduct(Guid id, [FromBody] UpdateProductDto dto)
     {
         var product = await _productService.UpdateProductAsync(id, dto);
         if (product == null)

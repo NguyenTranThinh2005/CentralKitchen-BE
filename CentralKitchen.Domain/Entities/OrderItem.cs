@@ -2,9 +2,9 @@ namespace CentralKitchen.Domain.Entities;
 
 public class OrderItem
 {
-    public int Id { get; set; }
-    public int OrderId { get; set; }
-    public int ProductId { get; set; }
+    public Guid Id { get; set; }
+    public Guid OrderId { get; set; }
+    public Guid ProductId { get; set; }
     public int Quantity { get; set; }
     public string Unit { get; set; } = null!;
     public decimal UnitPrice { get; set; }

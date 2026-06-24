@@ -4,8 +4,8 @@ namespace CentralKitchen.Domain.Entities;
 
 public class OrderStatusLog
 {
-    public int Id { get; set; }
-    public int OrderId { get; set; }
+    public Guid Id { get; set; }
+    public Guid OrderId { get; set; }
     public string FromStatus { get; set; } = null!;
     public string ToStatus { get; set; } = null!;
     public Guid ChangedBy { get; set; }

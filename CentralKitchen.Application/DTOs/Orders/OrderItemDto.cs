@@ -2,8 +2,8 @@ namespace CentralKitchen.Application.DTOs.Orders;
 
 public class OrderItemDto
 {
-    public int Id { get; set; }
-    public int ProductId { get; set; }
+    public Guid Id { get; set; }
+    public Guid ProductId { get; set; }
     public string ProductName { get; set; } = null!;
     public int Quantity { get; set; }
     public string Unit { get; set; } = null!;

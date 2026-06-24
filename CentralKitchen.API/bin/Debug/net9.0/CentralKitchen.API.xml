@@ -36,7 +36,7 @@
             Gets all products stock levels. Accessible by Managers and Kitchen Staff.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.InventoryController.UpdateInventory(System.Int32,CentralKitchen.Application.DTOs.Inventory.UpdateInventoryDto)">
+        <member name="M:CentralKitchen.API.Controllers.InventoryController.UpdateInventory(System.Guid,CentralKitchen.Application.DTOs.Inventory.UpdateInventoryDto)">
             <summary>
             Updates product stock levels manually. Restricted to Managers. Registers inventory log.
             </summary>
@@ -56,12 +56,12 @@
             Gets orders list filtered by status and creation date. Store Staff see only their own store orders, Kitchen Staff and Managers see all.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.OrdersController.GetOrderById(System.Int32)">
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.GetOrderById(System.Guid)">
             <summary>
             Gets detailed information for a single order, including order items and status history logs.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.OrdersController.UpdateOrderStatus(System.Int32,CentralKitchen.Application.DTOs.Orders.UpdateOrderStatusDto)">
+        <member name="M:CentralKitchen.API.Controllers.OrdersController.UpdateOrderStatus(System.Guid,CentralKitchen.Application.DTOs.Orders.UpdateOrderStatusDto)">
             <summary>
             Patches order fulfillment status state transition. Enforces strict transitions rules:
             - created -> accepted (Kitchen Staff only)
@@ -81,7 +81,7 @@
             Gets lists of products with optional category and status filtering.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.ProductsController.GetProductById(System.Int32)">
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.GetProductById(System.Guid)">
             <summary>
             Gets a specific product details.
             </summary>
@@ -91,7 +91,7 @@
             Creates a new product. Automatically initializes the stock quantity to 0 in inventory.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.ProductsController.UpdateProduct(System.Int32,CentralKitchen.Application.DTOs.Products.UpdateProductDto)">
+        <member name="M:CentralKitchen.API.Controllers.ProductsController.UpdateProduct(System.Guid,CentralKitchen.Application.DTOs.Products.UpdateProductDto)">
             <summary>
             Updates product information.
             </summary>
@@ -106,7 +106,7 @@
             Gets all stores in the franchise.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.StoresController.GetStoreById(System.Int32)">
+        <member name="M:CentralKitchen.API.Controllers.StoresController.GetStoreById(System.Guid)">
             <summary>
             Gets a store details by identifier.
             </summary>
@@ -116,7 +116,7 @@
             Registers a new franchise store.
             </summary>
         </member>
-        <member name="M:CentralKitchen.API.Controllers.StoresController.UpdateStore(System.Int32,CentralKitchen.Application.DTOs.Stores.UpdateStoreDto)">
+        <member name="M:CentralKitchen.API.Controllers.StoresController.UpdateStore(System.Guid,CentralKitchen.Application.DTOs.Stores.UpdateStoreDto)">
             <summary>
             Updates franchise store profile properties.
             </summary>

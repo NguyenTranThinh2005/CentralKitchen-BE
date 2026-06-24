@@ -19,7 +19,7 @@ public class OrderService : IOrderService
         _context = context;
     }
 
-    public async Task<OrderDto> CreateOrderAsync(Guid userId, int storeId, CreateOrderDto dto)
+    public async Task<OrderDto> CreateOrderAsync(Guid userId, Guid storeId, CreateOrderDto dto)
     {
         var orderCode = $"ORD-{DateTime.UtcNow:yyyyMMdd}-{Guid.NewGuid().ToString().Substring(0, 8).ToUpper()}";
 
@@ -71,7 +71,7 @@ public class OrderService : IOrderService
         return await GetOrderByIdAsync(order.Id, "manager", null) ?? throw new InvalidOperationException("Failed to retrieve created order.");
     }
 
-    public async Task<List<OrderDto>> GetOrdersAsync(string userRole, int? userStoreId, OrderStatus? status = null, DateTime? date = null)
+    public async Task<List<OrderDto>> GetOrdersAsync(string userRole, Guid? userStoreId, OrderStatus? status = null, DateTime? date = null)
     {
         var query = _context.Orders
             .Include(o => o.Store)
@@ -110,7 +110,7 @@ public class OrderService : IOrderService
         return orders.Select(MapToDto).ToList();
     }
 
-    public async Task<OrderDto?> GetOrderByIdAsync(int id, string userRole, int? userStoreId)
+    public async Task<OrderDto?> GetOrderByIdAsync(Guid id, string userRole, Guid? userStoreId)
     {
         var query = _context.Orders
             .Include(o => o.Store)
@@ -134,7 +134,7 @@ public class OrderService : IOrderService
         return MapToDto(order);
     }
 
-    public async Task<(bool Success, string? ErrorMessage)> UpdateOrderStatusAsync(int id, Guid userId, string userRole, int? userStoreId, UpdateOrderStatusDto dto)
+    public async Task<(bool Success, string? ErrorMessage)> UpdateOrderStatusAsync(Guid id, Guid userId, string userRole, Guid? userStoreId, UpdateOrderStatusDto dto)
     {
         var order = await _context.Orders
             .Include(o => o.OrderItems)

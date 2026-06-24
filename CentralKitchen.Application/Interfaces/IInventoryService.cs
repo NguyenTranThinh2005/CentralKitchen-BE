@@ -8,5 +8,5 @@ namespace CentralKitchen.Application.Interfaces;
 public interface IInventoryService
 {
     Task<List<InventoryDto>> GetInventoryAsync();
-    Task<InventoryDto?> UpdateInventoryAsync(int productId, Guid userId, UpdateInventoryDto dto);
+    Task<InventoryDto?> UpdateInventoryAsync(Guid productId, Guid userId, UpdateInventoryDto dto);
 }

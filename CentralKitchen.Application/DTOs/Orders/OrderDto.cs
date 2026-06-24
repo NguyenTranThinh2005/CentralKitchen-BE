@@ -5,9 +5,9 @@ namespace CentralKitchen.Application.DTOs.Orders;
 
 public class OrderDto
 {
-    public int Id { get; set; }
+    public Guid Id { get; set; }
     public string OrderCode { get; set; } = null!;
-    public int StoreId { get; set; }
+    public Guid StoreId { get; set; }
     public string StoreName { get; set; } = null!;
     public Guid CreatedBy { get; set; }
     public string CreatorName { get; set; } = null!;

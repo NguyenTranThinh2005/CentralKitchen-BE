@@ -8,5 +8,5 @@ public class LoginResponse
     public Guid UserId { get; set; }
     public string FullName { get; set; } = null!;
     public string Role { get; set; } = null!;
-    public int? StoreId { get; set; }
+    public Guid? StoreId { get; set; }
 }

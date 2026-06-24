@@ -35,7 +35,7 @@ public class InventoryService : IInventoryService
             }).ToListAsync();
     }
 
-    public async Task<InventoryDto?> UpdateInventoryAsync(int productId, Guid userId, UpdateInventoryDto dto)
+    public async Task<InventoryDto?> UpdateInventoryAsync(Guid productId, Guid userId, UpdateInventoryDto dto)
     {
         var inventory = await _context.Inventories
             .Include(i => i.Product)

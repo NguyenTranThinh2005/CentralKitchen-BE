@@ -15,3 +15,4 @@ D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debu
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\ref\CentralKitchen.Application.dll
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\bin\Debug\net9.0\CentralKitchen.Application.xml
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.xml
+D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.Application\obj\Debug\net9.0\CentralKitchen.Application.sourcelink.json

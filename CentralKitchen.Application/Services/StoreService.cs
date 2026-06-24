@@ -32,7 +32,7 @@ public class StoreService : IStoreService
         }).ToListAsync();
     }
 
-    public async Task<StoreDto?> GetStoreByIdAsync(int id)
+    public async Task<StoreDto?> GetStoreByIdAsync(Guid id)
     {
         var s = await _context.Stores.FirstOrDefaultAsync(x => x.Id == id);
         if (s == null) return null;
@@ -76,7 +76,7 @@ public class StoreService : IStoreService
         };
     }
 
-    public async Task<StoreDto?> UpdateStoreAsync(int id, UpdateStoreDto dto)
+    public async Task<StoreDto?> UpdateStoreAsync(Guid id, UpdateStoreDto dto)
     {
         var store = await _context.Stores.FirstOrDefaultAsync(s => s.Id == id);
         if (store == null) return null;
