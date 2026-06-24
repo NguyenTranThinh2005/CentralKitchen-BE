@@ -23,6 +23,19 @@ builder.Services.AddInfrastructureServices(builder.Configuration);
 // Add Controllers
 builder.Services.AddControllers();
 
+// Configure CORS – cho phép frontend (mọi origin trong dev) gọi API
+const string CorsPolicy = "AllowAll";
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy(CorsPolicy, policy =>
+    {
+        policy
+            .AllowAnyOrigin()   // TODO production: thay bằng .WithOrigins("https://your-domain.com")
+            .AllowAnyMethod()   // cho phép GET, POST, PUT, PATCH, DELETE, OPTIONS
+            .AllowAnyHeader();  // cho phép Authorization, Content-Type, ...
+    });
+});
+
 // Configure Authentication
 var jwtSecret = builder.Configuration["Supabase:JwtSecret"];
 if (string.IsNullOrEmpty(jwtSecret))
@@ -131,6 +144,9 @@ if (app.Environment.IsDevelopment() || true) // Enable Swagger in all environmen
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
 app.UseHttpsRedirection();
+
+// CORS phải đứng TRƯỚC Authentication/Authorization
+app.UseCors(CorsPolicy);
 
 app.UseAuthentication();
 app.UseAuthorization();

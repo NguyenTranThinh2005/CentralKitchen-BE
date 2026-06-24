@@ -71,4 +71,3 @@ D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.API\obj\Debug\net9.0
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.API\obj\Debug\net9.0\ref\CentralKitchen.API.dll
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.API\bin\Debug\net9.0\CentralKitchen.Application.xml
 D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.API\obj\Debug\net9.0\CentralKitchen.API.sourcelink.json
-D:\FPTU\PRM\GroupPrj\CentralKitchenFranchise\CentralKitchen.API\obj\Debug\net9.0\staticwebassets.upToDateCheck.txt
