@@ -70,12 +70,13 @@ public class ProductService : IProductService
     {
         var product = new Product
         {
+            Id = dto.Id ?? Guid.NewGuid(),
             Name = dto.Name,
             Description = dto.Description ?? "",
             Unit = dto.Unit,
             UnitPrice = dto.UnitPrice,
             Category = dto.Category,
-            IsActive = true,
+            IsActive = dto.IsActive,
             CreatedAt = DateTime.UtcNow,
             UpdatedAt = DateTime.UtcNow
         };

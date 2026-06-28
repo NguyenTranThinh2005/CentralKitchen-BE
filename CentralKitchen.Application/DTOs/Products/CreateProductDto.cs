@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using CentralKitchen.Domain.Enums;
 
@@ -5,6 +6,8 @@ namespace CentralKitchen.Application.DTOs.Products;
 
 public class CreateProductDto
 {
+    public Guid? Id { get; set; }
+
     [Required]
     [MaxLength(150)]
     public string Name { get; set; } = null!;
@@ -22,4 +25,6 @@ public class CreateProductDto
 
     [Required]
     public ProductCategory Category { get; set; }
+
+    public bool IsActive { get; set; } = true;
 }

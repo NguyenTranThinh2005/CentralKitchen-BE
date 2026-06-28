@@ -23,7 +23,7 @@ public class SupabaseAuthService : ISupabaseAuthService
         _anonKey = configuration["Supabase:AnonKey"] ?? throw new ArgumentNullException("Supabase:AnonKey configuration is missing");
     }
 
-    public async Task<(string? AccessToken, Guid? UserId, string? ErrorMessage)> LoginAsync(string email, string password)
+    public async Task<(string? AccessToken, string? RefreshToken, Guid? UserId, string? ErrorMessage)> LoginAsync(string email, string password)
     {
         try
         {
@@ -58,25 +58,76 @@ public class SupabaseAuthService : ISupabaseAuthService
                 var errorType = root.TryGetProperty("error", out var errorProp) ? errorProp.GetString() : null;
 
                 var displayError = errorDesc ?? errorMsg ?? errorType ?? "Invalid login attempt.";
-                return (null, null, displayError);
+                return (null, null, null, displayError);
             }
 
             var authResponse = JsonSerializer.Deserialize<SupabaseTokenResponse>(responseContent);
             if (authResponse == null || string.IsNullOrEmpty(authResponse.AccessToken))
             {
-                return (null, null, "Authentication response was empty.");
+                return (null, null, null, "Authentication response was empty.");
             }
 
             if (Guid.TryParse(authResponse.User?.Id, out var parsedGuid))
             {
-                return (authResponse.AccessToken, parsedGuid, null);
+                return (authResponse.AccessToken, authResponse.RefreshToken, parsedGuid, null);
             }
 
-            return (authResponse.AccessToken, null, null);
+            return (authResponse.AccessToken, authResponse.RefreshToken, null, null);
         }
         catch (Exception ex)
         {
-            return (null, null, $"Internal Auth Error: {ex.Message}");
+            return (null, null, null, $"Internal Auth Error: {ex.Message}");
+        }
+    }
+
+    public async Task<(string? AccessToken, string? RefreshToken, Guid? UserId, string? ErrorMessage)> RefreshAsync(string refreshToken)
+    {
+        try
+        {
+            var requestUrl = $"{_supabaseUrl.TrimEnd('/')}/auth/v1/token?grant_type=refresh_token";
+            var requestBody = new { refresh_token = refreshToken };
+            var jsonPayload = JsonSerializer.Serialize(requestBody);
+            var content = new StringContent(jsonPayload, Encoding.UTF8, "application/json");
+
+            var request = new HttpRequestMessage(HttpMethod.Post, requestUrl)
+            {
+                Content = content
+            };
+
+            request.Headers.Add("apikey", _anonKey);
+            request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", _anonKey);
+
+            var response = await _httpClient.SendAsync(request);
+            var responseContent = await response.Content.ReadAsStringAsync();
+
+            if (!response.IsSuccessStatusCode)
+            {
+                using var doc = JsonDocument.Parse(responseContent);
+                var root = doc.RootElement;
+                var errorDesc = root.TryGetProperty("error_description", out var descProp) ? descProp.GetString() : null;
+                var errorMsg = root.TryGetProperty("msg", out var msgProp) ? msgProp.GetString() : null;
+                var errorType = root.TryGetProperty("error", out var errorProp) ? errorProp.GetString() : null;
+
+                var displayError = errorDesc ?? errorMsg ?? errorType ?? "Invalid refresh token.";
+                return (null, null, null, displayError);
+            }
+
+            var authResponse = JsonSerializer.Deserialize<SupabaseTokenResponse>(responseContent);
+            if (authResponse == null || string.IsNullOrEmpty(authResponse.AccessToken))
+            {
+                return (null, null, null, "Refresh response was empty.");
+            }
+
+            if (Guid.TryParse(authResponse.User?.Id, out var parsedGuid))
+            {
+                return (authResponse.AccessToken, authResponse.RefreshToken, parsedGuid, null);
+            }
+
+            return (authResponse.AccessToken, authResponse.RefreshToken, null, null);
+        }
+        catch (Exception ex)
+        {
+            return (null, null, null, $"Internal Auth Error: {ex.Message}");
         }
     }
 
@@ -84,6 +135,9 @@ public class SupabaseAuthService : ISupabaseAuthService
     {
         [JsonPropertyName("access_token")]
         public string AccessToken { get; set; } = null!;
+
+        [JsonPropertyName("refresh_token")]
+        public string RefreshToken { get; set; } = "";
 
         [JsonPropertyName("user")]
         public SupabaseUser? User { get; set; }

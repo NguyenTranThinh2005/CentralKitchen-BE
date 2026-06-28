@@ -6,5 +6,6 @@ public enum ProductCategory
     Drink,
     Dessert,
     Ingredient,
-    Other
+    Other,
+    Semi_Finished
 }

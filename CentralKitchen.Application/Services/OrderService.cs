@@ -79,8 +79,7 @@ public class OrderService : IOrderService
             .Include(o => o.Canceller)
             .Include(o => o.OrderItems)
             .ThenInclude(oi => oi.Product)
-            .Include(o => o.StatusLogs)
-            .ThenInclude(l => l.Changer)
+            .AsNoTracking()
             .AsQueryable();
 
         // Store staff can only see their store's orders
@@ -118,8 +117,7 @@ public class OrderService : IOrderService
             .Include(o => o.Canceller)
             .Include(o => o.OrderItems)
             .ThenInclude(oi => oi.Product)
-            .Include(o => o.StatusLogs)
-            .ThenInclude(l => l.Changer)
+            .AsNoTracking()
             .AsQueryable();
 
         var order = await query.FirstOrDefaultAsync(o => o.Id == id);

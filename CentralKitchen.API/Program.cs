@@ -36,32 +36,16 @@ builder.Services.AddCors(options =>
     });
 });
 
-// Configure Authentication
-var jwtSecret = builder.Configuration["Supabase:JwtSecret"];
-if (string.IsNullOrEmpty(jwtSecret))
-{
-    throw new InvalidOperationException("Supabase JWT Secret is missing from configurations.");
-}
-
+// Configure Authentication against Supabase Auth user endpoint.
+// This avoids requiring the project JWT signing secret in local appsettings.
 builder.Services.AddAuthentication(options =>
 {
     options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
     options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
 })
-.AddJwtBearer(options =>
-{
-    options.TokenValidationParameters = new TokenValidationParameters
-    {
-        ValidateIssuerSigningKey = true,
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(jwtSecret)),
-        ValidateIssuer = !string.IsNullOrEmpty(builder.Configuration["JwtSettings:Issuer"]),
-        ValidIssuer = builder.Configuration["JwtSettings:Issuer"],
-        ValidateAudience = !string.IsNullOrEmpty(builder.Configuration["JwtSettings:Audience"]),
-        ValidAudience = builder.Configuration["JwtSettings:Audience"] ?? "authenticated",
-        ValidateLifetime = true,
-        ClockSkew = TimeSpan.Zero
-    };
-});
+.AddScheme<AuthenticationSchemeOptions, SupabaseAuthenticationHandler>(
+    JwtBearerDefaults.AuthenticationScheme,
+    options => { });
 
 // Register Claims Transformation to load Role and StoreId from DB
 builder.Services.AddTransient<IClaimsTransformation, SupabaseClaimsTransformation>();
@@ -143,7 +127,10 @@ if (app.Environment.IsDevelopment() || true) // Enable Swagger in all environmen
 // Global Exception Handler Middleware
 app.UseMiddleware<ExceptionHandlingMiddleware>();
 
-app.UseHttpsRedirection();
+if (!app.Environment.IsDevelopment())
+{
+    app.UseHttpsRedirection();
+}
 
 // CORS phải đứng TRƯỚC Authentication/Authorization
 app.UseCors(CorsPolicy);

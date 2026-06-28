@@ -1833,11 +1833,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
+      "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
       "projectName": "CentralKitchen.API",
-      "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
+      "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
       "packagesPath": "C:\\Users\\THINH\\.nuget\\packages\\",
-      "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.API\\obj\\",
+      "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1858,11 +1858,11 @@
         "net9.0": {
           "targetAlias": "net9.0",
           "projectReferences": {
-            "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
-              "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
+            "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
+              "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
             },
-            "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
-              "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj"
+            "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
+              "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj"
             }
           }
         }

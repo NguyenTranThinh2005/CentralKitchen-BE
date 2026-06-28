@@ -16,6 +16,16 @@
             <param name="request">Email and Password payload.</param>
             <returns>Login response envelope with JWT AccessToken.</returns>
         </member>
+        <member name="M:CentralKitchen.API.Controllers.AuthController.Refresh(CentralKitchen.Application.DTOs.Auth.RefreshTokenRequest)">
+            <summary>
+            Refreshes a Supabase access token using a refresh token.
+            </summary>
+        </member>
+        <member name="M:CentralKitchen.API.Controllers.AuthController.Me">
+            <summary>
+            Returns the current authenticated user profile from the local kitchen database.
+            </summary>
+        </member>
         <member name="T:CentralKitchen.API.Controllers.DashboardController">
             <summary>
             Managers reporting statistics.

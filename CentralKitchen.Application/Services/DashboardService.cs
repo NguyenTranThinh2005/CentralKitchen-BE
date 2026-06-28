@@ -28,6 +28,10 @@ public class DashboardService : IDashboardService
             .ToListAsync();
 
         var totalOrders = ordersToday.Count;
+        var totalRevenue = await _context.Orders
+            .Where(o => o.CreatedAt >= startOfToday && o.CreatedAt < endOfToday && o.Status == CentralKitchen.Domain.Enums.OrderStatus.Received)
+            .SelectMany(o => o.OrderItems)
+            .SumAsync(i => i.UnitPrice * i.Quantity);
 
         var ordersByStatus = ordersToday
             .GroupBy(o => o.Status.ToString().ToLower())
@@ -52,6 +56,7 @@ public class DashboardService : IDashboardService
         return new DashboardSummaryDto
         {
             TotalOrders = totalOrders,
+            TotalRevenue = totalRevenue,
             OrdersByStatus = ordersByStatus,
             LowStockProducts = lowStock
         };
