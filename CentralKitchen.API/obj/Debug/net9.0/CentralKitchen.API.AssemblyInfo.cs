@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CentralKitchen.API")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e06e4e4f92850def54b105baf207f962fbc4dd22")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+51e45749738a76dc6cc54a634716d0d8eefc84f4")]
 [assembly: System.Reflection.AssemblyProductAttribute("CentralKitchen.API")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CentralKitchen.API")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
