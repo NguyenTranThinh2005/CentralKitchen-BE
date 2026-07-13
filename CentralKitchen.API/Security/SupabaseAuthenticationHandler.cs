@@ -41,15 +41,35 @@ public class SupabaseAuthenticationHandler : AuthenticationHandler<Authenticatio
             using var payload = JsonDocument.Parse(DecodeBase64Url(parts[1]));
             var root = payload.RootElement;
 
-            if (!root.TryGetProperty("sub", out var subProperty))
+            string userId = null;
+            if (root.TryGetProperty("sub", out var subProp))
             {
-                return Task.FromResult(AuthenticateResult.Fail("Supabase user id is missing."));
+                userId = subProp.GetString();
+            }
+            else if (root.TryGetProperty("userId", out var userIdProp))
+            {
+                userId = userIdProp.GetString();
+            }
+            else if (root.TryGetProperty("user_id", out var userIdProp2))
+            {
+                userId = userIdProp2.GetString();
+            }
+            else if (root.TryGetProperty("uid", out var uidProp))
+            {
+                userId = uidProp.GetString();
+            }
+            else if (root.TryGetProperty("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier", out var nameIdProp))
+            {
+                userId = nameIdProp.GetString();
+            }
+            else if (root.TryGetProperty("nameid", out var nameidProp))
+            {
+                userId = nameidProp.GetString();
             }
 
-            var userId = subProperty.GetString();
             if (string.IsNullOrWhiteSpace(userId))
             {
-                return Task.FromResult(AuthenticateResult.Fail("Supabase user id is empty."));
+                return Task.FromResult(AuthenticateResult.Fail("User ID claim is missing from token."));
             }
 
             if (root.TryGetProperty("exp", out var expProperty) && expProperty.TryGetInt64(out var exp))
@@ -71,10 +91,30 @@ public class SupabaseAuthenticationHandler : AuthenticationHandler<Authenticatio
             if (root.TryGetProperty("email", out var emailProperty))
             {
                 email = emailProperty.GetString() ?? "";
-                if (!string.IsNullOrWhiteSpace(email))
-                {
-                    claims.Add(new Claim(ClaimTypes.Email, email));
-                }
+            }
+            else if (root.TryGetProperty("http://schemas.xmlsoap.org/ws/2005/05/identity/claims/name", out var nameProp))
+            {
+                email = nameProp.GetString() ?? "";
+            }
+
+            if (!string.IsNullOrWhiteSpace(email))
+            {
+                claims.Add(new Claim(ClaimTypes.Email, email));
+            }
+
+            // Extract role from token payload if present
+            string tokenRole = null;
+            if (root.TryGetProperty("role", out var roleProp))
+            {
+                tokenRole = roleProp.GetString();
+            }
+            else if (root.TryGetProperty("http://schemas.microsoft.com/ws/2008/06/identity/claims/role", out var roleProp2))
+            {
+                tokenRole = roleProp2.GetString();
+            }
+            else if (root.TryGetProperty("http://schemas.microsoft.com/ws/2008/06/identisey/claims/role", out var roleProp3))
+            {
+                tokenRole = roleProp3.GetString();
             }
 
             if (Guid.TryParse(userId, out var parsedUserId) && AuthSessionCache.TryGet(parsedUserId, out var cachedProfile))
@@ -87,7 +127,8 @@ public class SupabaseAuthenticationHandler : AuthenticationHandler<Authenticatio
             }
             else
             {
-                claims.Add(new Claim(ClaimTypes.Role, InferRole(email)));
+                var finalRole = tokenRole ?? InferRole(email);
+                claims.Add(new Claim(ClaimTypes.Role, finalRole.ToLowerInvariant()));
             }
 
             var identity = new ClaimsIdentity(claims, Scheme.Name);

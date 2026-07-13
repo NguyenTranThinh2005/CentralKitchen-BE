@@ -244,7 +244,7 @@ public class OrderService : IOrderService
                     ProductId = item.ProductId,
                     ChangeQty = -item.Quantity,
                     Reason = "order_shipment",
-                    ReferenceId = order.OrderCode,
+                    ReferenceId = order.Id,
                     CreatedBy = userId,
                     CreatedAt = DateTime.UtcNow
                 });

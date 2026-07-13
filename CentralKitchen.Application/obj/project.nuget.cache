@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "0bhDZJTrfN8=",
+  "dgSpecHash": "Ma28j2e7Vq0=",
   "success": true,
-  "projectFilePath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
+  "projectFilePath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\THINH\\.nuget\\packages\\microsoft.entityframeworkcore\\9.0.2\\microsoft.entityframeworkcore.9.0.2.nupkg.sha512",
     "C:\\Users\\THINH\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\9.0.2\\microsoft.entityframeworkcore.abstractions.9.0.2.nupkg.sha512",

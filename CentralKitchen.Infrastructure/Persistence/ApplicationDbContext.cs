@@ -67,7 +67,6 @@ public class ApplicationDbContext : DbContext, IApplicationDbContext
         {
             entity.HasKey(e => e.Id);
             entity.Property(e => e.Reason).IsRequired().HasMaxLength(100);
-            entity.Property(e => e.ReferenceId).HasMaxLength(100);
             entity.HasOne(e => e.Product)
                 .WithMany()
                 .HasForeignKey(e => e.ProductId)

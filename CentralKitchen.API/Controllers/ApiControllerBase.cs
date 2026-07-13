@@ -12,7 +12,12 @@ public abstract class ApiControllerBase : ControllerBase
     {
         get
         {
-            var subClaim = User.FindFirst("sub") ?? User.FindFirst(ClaimTypes.NameIdentifier);
+            var subClaim = User.FindFirst("sub") 
+                ?? User.FindFirst(ClaimTypes.NameIdentifier) 
+                ?? User.FindFirst("userId")
+                ?? User.FindFirst("user_id")
+                ?? User.FindFirst("uid");
+
             if (subClaim != null && Guid.TryParse(subClaim.Value, out var userId))
             {
                 return userId;

@@ -8,7 +8,7 @@ public class InventoryLog
     public Guid ProductId { get; set; }
     public int ChangeQty { get; set; }
     public string Reason { get; set; } = null!;
-    public string? ReferenceId { get; set; }
+    public Guid? ReferenceId { get; set; }
     public Guid CreatedBy { get; set; }
     public DateTime CreatedAt { get; set; }
 

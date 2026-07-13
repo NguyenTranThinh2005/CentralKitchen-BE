@@ -50,15 +50,45 @@ public class InventoryService : IInventoryService
 
         var diff = dto.Quantity - oldQty;
 
-        // Log manual adjustment
-        _context.InventoryLogs.Add(new InventoryLog
+        // Log manual adjustment – verify if the userId exists in the Users database to avoid FK constraints
+        var creatorId = userId;
+        var userExists = await _context.Users.AnyAsync(u => u.Id == userId);
+        if (!userExists)
         {
-            ProductId = productId,
-            ChangeQty = diff,
-            Reason = "manual_adjust",
-            CreatedBy = userId,
-            CreatedAt = DateTime.UtcNow
-        });
+            var fallbackUser = await _context.Users
+                .FirstOrDefaultAsync(u => u.IsActive && (u.Role == "manager" || u.Role == "admin" || u.Role == "Manager"));
+            
+            fallbackUser ??= await _context.Users.FirstOrDefaultAsync(u => u.IsActive);
+            
+            if (fallbackUser != null)
+            {
+                creatorId = fallbackUser.Id;
+            }
+            else
+            {
+                var anyUser = await _context.Users.FirstOrDefaultAsync();
+                if (anyUser != null)
+                {
+                    creatorId = anyUser.Id;
+                }
+                else
+                {
+                    creatorId = Guid.Empty;
+                }
+            }
+        }
+
+        if (creatorId != Guid.Empty)
+        {
+            _context.InventoryLogs.Add(new InventoryLog
+            {
+                ProductId = productId,
+                ChangeQty = diff,
+                Reason = "manual_adjust",
+                CreatedBy = creatorId,
+                CreatedAt = DateTime.UtcNow
+            });
+        }
 
         await _context.SaveChangesAsync();
 

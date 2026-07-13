@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("CentralKitchen.Infrastructure")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a0665bc3020ff7ebd4d736d87cfd1ab3d64027c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e06e4e4f92850def54b105baf207f962fbc4dd22")]
 [assembly: System.Reflection.AssemblyProductAttribute("CentralKitchen.Infrastructure")]
 [assembly: System.Reflection.AssemblyTitleAttribute("CentralKitchen.Infrastructure")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

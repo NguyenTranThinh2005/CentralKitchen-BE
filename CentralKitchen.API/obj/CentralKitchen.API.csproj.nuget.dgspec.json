@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj": {}
+    "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj": {}
   },
   "projects": {
-    "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj": {
+    "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
+        "projectUniqueName": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
         "projectName": "CentralKitchen.API",
-        "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
+        "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\CentralKitchen.API.csproj",
         "packagesPath": "C:\\Users\\THINH\\.nuget\\packages\\",
-        "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\obj\\",
+        "outputPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -32,11 +32,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
-                "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
+              "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
+                "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
               },
-              "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
-                "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj"
+              "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
+                "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj"
               }
             }
           }
@@ -101,14 +101,14 @@
         }
       }
     },
-    "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
+    "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
+        "projectUniqueName": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
         "projectName": "CentralKitchen.Application",
-        "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
+        "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj",
         "packagesPath": "C:\\Users\\THINH\\.nuget\\packages\\",
-        "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\obj\\",
+        "outputPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -129,8 +129,8 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
-                "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj"
+              "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
+                "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj"
               }
             }
           }
@@ -176,14 +176,14 @@
         }
       }
     },
-    "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
+    "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj",
+        "projectUniqueName": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj",
         "projectName": "CentralKitchen.Domain",
-        "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj",
+        "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj",
         "packagesPath": "C:\\Users\\THINH\\.nuget\\packages\\",
-        "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\obj\\",
+        "outputPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -241,14 +241,14 @@
         }
       }
     },
-    "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
+    "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj",
+        "projectUniqueName": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj",
         "projectName": "CentralKitchen.Infrastructure",
-        "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj",
+        "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\CentralKitchen.Infrastructure.csproj",
         "packagesPath": "C:\\Users\\THINH\\.nuget\\packages\\",
-        "outputPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\obj\\",
+        "outputPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -269,11 +269,11 @@
           "net9.0": {
             "targetAlias": "net9.0",
             "projectReferences": {
-              "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
-                "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
+              "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj": {
+                "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Application\\CentralKitchen.Application.csproj"
               },
-              "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
-                "projectPath": "D:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj"
+              "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj": {
+                "projectPath": "d:\\FPTU\\PRM\\GroupPrj\\CentralKitchen-FE\\CentralKitchenFranchise\\CentralKitchen.Domain\\CentralKitchen.Domain.csproj"
               }
             }
           }
